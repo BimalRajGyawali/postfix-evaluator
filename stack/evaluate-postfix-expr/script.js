@@ -48,6 +48,13 @@ function operate(value1,value2,operator){
    }
 }
 
+
+
+
+
+/*Here onwards involve only DOM manipulation
+  Actual algorithm is already implemented
+*/
 var evalbtn = document.getElementById('eval');
 
 evalbtn.addEventListener('click',function(){
@@ -66,9 +73,8 @@ evalbtn.addEventListener('click',function(){
 var codebtn = document.getElementById('code');
 
 codebtn.addEventListener('click',function(){
-    window.location = '';
+    window.location = 'https://github.com/BimalRajGyawali/Data-Structures/blob/master/stack/evaluate-postfix-expr/script.js';
 });
 
 
 
-//'54*62/+78*-'
