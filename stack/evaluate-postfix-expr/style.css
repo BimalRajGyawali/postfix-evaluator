@@ -69,8 +69,12 @@ input[type='text']::placeholder{
 .result{
   font-size: 20px;
   font-weight: 600;
-  color:green;
   padding: 20px 0 20px 0;
+  color:green;
+}
+
+.error{
+    color:red;
 }
 
 /*For tablets */

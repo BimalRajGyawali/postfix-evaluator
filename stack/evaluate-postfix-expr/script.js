@@ -15,17 +15,14 @@ function evaluatePostFixExpression(postfix){
     
 //     console.log(pop1+' '+pop2); /*UNCOMMENT THIS TO TRACE WHOLE STACK STAGES*/
     
-    var result = operate(pop2,pop1,postfix[i]).toString();
+    var result = parseInt(operate(pop2,pop1,postfix[i])).toString();
     stack.push(result);
 //  console.log(stack); /*UNCOMMENT THIS TO TRACE WHOLE STACK STAGES*/
     
   }
 }
-   if(isNaN(stack[0]) || stack.length>1){
-     stack[0] = 'Error in postfix expression';
-   }
-
-   return stack[0];
+   
+   return stack;
 }
 
 function isOperand(arg){
@@ -61,11 +58,22 @@ evalbtn.addEventListener('click',function(){
   var postfix = document.getElementById('expr').value;
   var result = evaluatePostFixExpression(postfix);
   /*ENTER POSTFIX EXPRESSION AS PARAMETER*/
+  var resultPara = document.getElementsByClassName('result')[0];
+ 
+
+  var msg = '';
+
+  if(isNaN(result[0]) || result.length>1){
+    msg = 'Error in postfix expression';
+    resultPara.classList.add('error');
+  }else{
+    msg = result[0];
+    resultPara.classList.remove('error');
+  }
 
   var resultSpan = document.getElementById('result');
-  resultSpan.innerHTML = result;
+  resultSpan.innerHTML = msg;
 
-  var resultPara = document.getElementsByClassName('result')[0];
   resultPara.style.display = 'block';
   
 });
