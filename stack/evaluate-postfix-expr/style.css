@@ -1,0 +1,98 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    width:85%;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+.full-width{
+  margin-bottom: 20px;
+  width:100%;
+  height: 12vh;;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+input[type='text']{
+    letter-spacing: 0.2em; 
+}
+input[type='text']::placeholder{
+    letter-spacing: 0;
+}
+
+.blue-btn{
+    background: blue;
+    color:wheat;
+    cursor: pointer;
+}
+.blue-btn:hover{
+    background: wheat;
+    color:blue;
+
+}
+.blue-btn:active{
+    background: blue;
+    color:wheat;
+}
+.purple-btn{
+    background: purple;
+    color:wheat;
+
+    cursor: pointer;
+
+}
+.purple-btn:hover{
+    background: wheat;
+    color:purple;
+}
+.purple-btn:active{
+    background: purple;
+    color:wheat;
+}
+
+.no-border,
+.no-border:focus{
+    border-style: hidden;
+    outline: none;
+}
+
+
+.hidden{
+    display:none;
+}
+.result{
+  font-size: 20px;
+  font-weight: 600;
+  color:green;
+  padding: 20px 0 20px 0;
+}
+
+/*For tablets */
+
+@media only screen and (min-width:600px){
+    .container{
+        width:50%;
+    }
+    .col-9{
+        width: 75%;
+        float: left;
+    }
+    .col-3{
+        width: 25%;
+        float: right;
+    }
+}
+
+/*For tablets */
+@media only screen and (min-width:768px){
+  .container{
+      width: 50%;
+  }
+   
+}

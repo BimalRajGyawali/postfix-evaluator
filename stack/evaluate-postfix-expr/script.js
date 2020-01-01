@@ -21,8 +21,11 @@ function evaluatePostFixExpression(postfix){
     
   }
 }
-  return stack[0];
+   if(isNaN(stack[0]) || stack.length>1){
+     stack[0] = 'Error in postfix expression';
+   }
 
+   return stack[0];
 }
 
 function isOperand(arg){
@@ -45,5 +48,27 @@ function operate(value1,value2,operator){
    }
 }
 
-var result = evaluatePostFixExpression('54*62/+78*-'); /*ENTER POSTFIX EXPRESSION AS PARAMETER*/
-console.log(result);
+var evalbtn = document.getElementById('eval');
+
+evalbtn.addEventListener('click',function(){
+  var postfix = document.getElementById('expr').value;
+  var result = evaluatePostFixExpression(postfix);
+  /*ENTER POSTFIX EXPRESSION AS PARAMETER*/
+
+  var resultSpan = document.getElementById('result');
+  resultSpan.innerHTML = result;
+
+  var resultPara = document.getElementsByClassName('result')[0];
+  resultPara.style.display = 'block';
+  
+});
+
+var codebtn = document.getElementById('code');
+
+codebtn.addEventListener('click',function(){
+    window.location = '';
+});
+
+
+
+//'54*62/+78*-'
